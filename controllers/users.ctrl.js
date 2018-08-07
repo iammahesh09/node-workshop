@@ -1,6 +1,6 @@
 class userCtrl {
 
-    getuser(req, res) {
+    getusers(req, res) {
 
         var usersList = [{
                 firstname: 'Mahesh',
@@ -33,6 +33,7 @@ class userCtrl {
                 work_exp: 7
             }
         ]
+        res.status(200);
         res.json(usersList)
     }
 
