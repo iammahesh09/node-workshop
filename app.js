@@ -1,10 +1,16 @@
-const http = require('http');
+const express = require('express');
 
-var classbackFun = function (req, res) {
-    res.write("Hello Node WorkShop")
-    res.end();
+const app = express();
+
+function callbackFun() {
+    console.log("Nodejs Port is 50001")
 }
 
-http.createServer(classbackFun).listen(5001)
+app.listen(5001, callbackFun);
 
-console.log("Nodejs server port 50001")
+app.get('/', handlerFun);
+
+
+function handlerFun(req, res) {
+    res.send("Hello! Express API")
+}
